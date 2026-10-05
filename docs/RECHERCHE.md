@@ -32,4 +32,4 @@ Tragende Gründe: https://www.g-ba.de/downloads/40-268-10181/2024-01-18_MVV-RL_C
 
 ## 4. Praxisangaben (Live-Website, abgerufen 05.10.2026)
 
-128-Schicht-CT; Termin 040 3500484-0; Privatpatienten MRT/CT 040 3500484-54; Sprechzeiten Mo–Do 8–17, Fr 8–16 Uhr; Doctolib `mrtdiagnostik-dammtorwall`; Herz-CT bereits auf `/ct-diagnostik` erwähnt.
+128-Schicht-CT; Termin 040 3500484-0; Privatpatienten MRT/CT 040 3500484-54; Sprechzeiten Mo–Do 8–17, Fr 8–16 Uhr; Doctolib `mammadiagnostik-stephansplatz?pid=practice-79031` (von der Praxis bestätigt); Herz-CT bereits auf `/ct-diagnostik` erwähnt.
