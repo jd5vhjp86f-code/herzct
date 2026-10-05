@@ -663,3 +663,5 @@ body.hct { margin: 0; background: var(--hct-white); }
 .hct-swim--list .hct-swim__list { position: static !important; width: auto; height: auto; clip: auto; overflow: visible; }
 .hct-swim--list .hct-legend { display: flex !important; }
 span.hct-pruefen { display: inline; padding: 0 0.2em; }
+.hct-proto-legal { list-style: none; margin: 0 0 var(--hct-space-3); padding: 0; display: flex; flex-wrap: wrap; gap: var(--hct-space-2) var(--hct-space-4); }
+.hct-proto-legal a { display: inline-block; min-height: 44px; line-height: 44px; }

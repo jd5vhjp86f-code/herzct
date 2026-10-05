@@ -1,5 +1,5 @@
-# Testet, baut und veröffentlicht den Prototyp auf GitHub Pages.
-# Die Veröffentlichung läuft nur, wenn GitHub Pages für das Repository aktiviert ist
+# Testet, baut und veröffentlicht den Prototyp auf GitHub Pages (https://herz.rosenbaum.hamburg/).
+# Veröffentlicht wird nur von main und nur, wenn GitHub Pages aktiviert ist
 # (Settings → Pages → Source: „GitHub Actions“). Sonst werden nur Tests und Build geprüft.
 name: Prototyp
 
@@ -36,7 +36,7 @@ jobs:
 
   deploy:
     needs: build
-    if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch && github.event.repository.has_pages
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && github.event.repository.has_pages
     runs-on: ubuntu-latest
     permissions:
       pages: write

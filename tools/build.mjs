@@ -8,7 +8,8 @@
  * wird role="img" + aria-label gesetzt, sonst aria-hidden (dekorativ).
  *
  * Aufruf:
- *   node tools/build.mjs            → public/          (Prototyp, GitHub Pages)
+ *   node tools/build.mjs            → public/          (Prototyp, GitHub Pages unter https://herz.rosenbaum.hamburg/:
+ *     Einstiegsseite im Wurzelpfad, /patienten/, /zuweiser/, Übersicht unter /prototyp/)
  *   node tools/build.mjs --agentur  → dist/agentur/    (Produktionsfassung für das Theme:
  *     ohne Prototyp-Kopf/-Fuß, ohne noindex/robots.txt, feste Pfade
  *     /herz-ct… und Assets unter ASSET_BASE)
@@ -21,6 +22,9 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const src = join(root, 'src');
 const AGENTUR = process.argv.includes('--agentur');
 const ASSET_BASE = '/themes/ohjunge/assets/hct/';
+const PAGES_DOMAIN = 'herz.rosenbaum.hamburg';
+// Im Theme liegt die Unterseite unter /herz-ct (Prototyp: im Wurzelpfad der eigenen Domain)
+const PROD_PREFIX = '/herz-ct';
 const out = AGENTUR ? join(root, 'dist', 'agentur') : join(root, 'public');
 
 const escAttr = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
@@ -57,6 +61,8 @@ if (AGENTUR) {
   cpSync(join(root, 'assets', 'robots-prototyp.txt'), join(out, 'robots.txt'));
   // GitHub Pages: keine Jekyll-Verarbeitung
   writeFileSync(join(out, '.nojekyll'), '');
+  // Eigene Domain für GitHub Pages (zusätzlich in Settings → Pages → Custom domain eintragen)
+  writeFileSync(join(out, 'CNAME'), `${PAGES_DOMAIN}\n`);
 }
 
 /** Produktionsfassung: Prototyp-Rahmen entfernen, relative Pfade auf feste URLs umstellen. */
@@ -73,7 +79,7 @@ function toProduction(html, pagePath) {
     const abs = new URL(url, base);
     let p = abs.pathname;
     if (p.startsWith('/assets/')) p = ASSET_BASE + p.slice('/assets/'.length);
-    else if (p !== '/') p = p.replace(/\/$/, '');
+    else p = PROD_PREFIX + (p === '/' ? '' : p.replace(/\/$/, ''));
     return `${attr}="${p}${abs.hash}"`;
   });
 }
@@ -81,8 +87,8 @@ function toProduction(html, pagePath) {
 const pagesDir = join(src, 'pages');
 for (const file of walk(pagesDir).filter((f) => f.endsWith('.html'))) {
   const rel = relative(pagesDir, file);
-  if (AGENTUR && rel === 'index.html') continue; // Prototyp-Übersicht entfällt
-  const target = join(out, rel);
+  if (AGENTUR && rel.startsWith('prototyp')) continue; // Prototyp-Übersicht entfällt
+  const target = AGENTUR ? join(out, PROD_PREFIX.slice(1), rel) : join(out, rel);
   mkdirSync(dirname(target), { recursive: true });
   let html = render(readFileSync(file, 'utf8'));
   if (AGENTUR) html = toProduction(html, '/' + rel.replace(/index\.html$/, ''));

@@ -1,28 +1,93 @@
 <!doctype html>
 <html lang="de">
 <head>
-<!-- @include head base="" path="/" title="Prototyp Herz-CT – Übersicht" description="Übersicht über den statischen Prototyp der Unterseite Herz-CT der Radiologie Dammtor." -->
+<!-- @include head base="" path="/herz-ct" title="Herz-CT in Hamburg – Koronar-CT ohne Katheter | Radiologie Dammtor" description="Herz-CT (CT-Koronarangiographie) bei Verdacht auf koronare Herzkrankheit – seit 2025 Kassenleistung. Radiologie Dammtor am Dammtorwall, Hamburg: Informationen für Patientinnen, Patienten und Zuweisende." -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Herz-CT in Hamburg",
+  "url": "https://www.radiologie-dammtor.de/herz-ct",
+  "inLanguage": "de-DE",
+  "about": { "@type": "MedicalCondition", "name": "Koronare Herzkrankheit", "alternateName": "KHK" },
+  "mainEntity": {
+    "@type": "MedicalTest",
+    "name": "Computertomographie-Koronarangiographie (CCTA)",
+    "alternateName": ["Herz-CT", "Koronar-CT"],
+    "usedToDiagnose": { "@type": "MedicalCondition", "name": "Koronare Herzkrankheit" }
+  },
+  "audience": [
+    { "@type": "PeopleAudience", "audienceType": "Patient" },
+    { "@type": "MedicalAudience", "audienceType": "Clinician" }
+  ],
+  "provider": {
+    "@type": "MedicalClinic",
+    "name": "Radiologie Dammtor",
+    "telephone": "+49 40 3500484-0",
+    "address": { "@type": "PostalAddress", "streetAddress": "Dammtorwall 7a", "postalCode": "20354", "addressLocality": "Hamburg", "addressCountry": "DE" }
+  }
+}
+</script>
 </head>
 <body class="hct">
-<!-- @include site-header base="" -->
-<main id="inhalt" class="hct-section">
-  <div class="hct-container">
-    <span class="hct-kicker">Prototyp</span>
-    <h1 class="hct-h1" style="font-size:clamp(1.25rem, 0.6rem + 3.2vw, 2.25rem)">Unterseite <span class="hct-accent">Herz-CT</span></h1>
-    <ul class="hct-dots">
-      <li><a href="herz-ct/">/herz-ct</a> – Hub mit Zielgruppen-Weiche</li>
-      <li><a href="herz-ct/patienten/">/herz-ct/patienten</a> – Patientenbereich mit Vorbereitungs-Check</li>
-      <li><a href="herz-ct/zuweiser/">/herz-ct/zuweiser</a> – Zuweiserbereich mit VTW-Rechner (Marburger Herz-Score, NVL Tabelle 6)</li>
-    </ul>
-    <h2 class="hct-h3">Teaser für Startseite und /ct-diagnostik</h2>
-    <!-- @include teaser id="teaser" base="" -->
-    <h2 class="hct-h3">Leitbild-Varianten</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:2rem;align-items:center">
-      <div style="background:var(--hct-blue);width:220px" class="hct-on-dark hct-hero__art"><!-- @include heart-hero label="Herz-Symbol, Hero-Variante" --></div>
-      <!-- @include heart-small id="demo-s" label="Herz-Symbol, kleine Variante" -->
-      <!-- @include heart-mono id="demo-m" label="Herz-Symbol, monochrome Variante" -->
+<!-- @include site-header base="" navHub="aria-current='page'" -->
+<main id="inhalt">
+  <section class="hct-hero hct-on-dark">
+    <div class="hct-container">
+      <div>
+        <nav class="hct-breadcrumb" aria-label="Brotkrumen"><ol><li><a href="https://www.radiologie-dammtor.de/">Start</a></li><li><a href="https://www.radiologie-dammtor.de/ct-diagnostik">CT-Diagnostik</a></li><li><span aria-current="page">Herz-CT</span></li></ol></nav>
+        <span class="hct-kicker">CT-Diagnostik Herz</span>
+        <h1 class="hct-h1">Herz-CT <span class="hct-accent">in Hamburg</span></h1>
+        <p class="hct-lead">Die CT-Koronarangiographie zeigt, ob die Herzkranzgefäße verengt sind – ohne Herzkatheter. Bei Verdacht auf eine koronare Herzkrankheit ist sie eine Leistung der gesetzlichen Krankenversicherung.</p>
+        <ul class="hct-claims">
+          <li>Ohne Katheter.</li>
+          <li>In wenigen Minuten.</li>
+          <li>Klar befundet.</li>
+        </ul>
+      </div>
+      <div class="hct-hero__art"><!-- @include heart-hero --></div>
     </div>
-  </div>
+  </section>
+
+  <section class="hct-section" aria-labelledby="weiche-h">
+    <div class="hct-container">
+      <span class="hct-kicker">Informationen für</span>
+      <h2 class="hct-h2" id="weiche-h">Wer sind <span class="hct-accent">Sie?</span></h2>
+      <div class="hct-tiles">
+        <article class="hct-tile">
+          <!-- @include heart-small id="t1" -->
+          <h3 class="hct-h2"><a href="patienten/">Für Patientinnen und Patienten</a></h3>
+          <p>Was ein Herz-CT zeigt, für wen es gedacht ist, Vorbereitungs-Check, Ablauf, Nutzen und Risiken, häufige Fragen.</p>
+          <span class="hct-tile__more" aria-hidden="true">Zum Patientenbereich →</span>
+        </article>
+        <article class="hct-tile hct-tile--doc">
+          <!-- @include heart-small id="t2" -->
+          <h3 class="hct-h2"><a href="zuweiser/">Für Ärztinnen und Ärzte</a></h3>
+          <p>Indikation nach G-BA, Rechner für die Vortestwahrscheinlichkeit, Checkliste zur Überweisung, Befundinhalte, Abrechnung.</p>
+          <span class="hct-tile__more" aria-hidden="true">Zum Zuweiserbereich →</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="hct-section hct-section--sand" aria-labelledby="kurz-h">
+    <div class="hct-container hct-grid-2">
+      <div>
+        <span class="hct-kicker">Auf einen Blick</span>
+        <h2 class="hct-h2" id="kurz-h">Das Herz-CT <span class="hct-accent">kurz erklärt</span></h2>
+        <ul class="hct-dots">
+          <li><strong>Was:</strong> Computertomographie des Herzens mit Kontrastmittel, aufgenommen im Takt des Herzschlags. Vorab wird der Kalk in den Herzkranzgefäßen gemessen.</li>
+          <li><strong>Für wen:</strong> Menschen mit Beschwerden, bei denen die Arztpraxis eine koronare Herzkrankheit vermutet. Die Kasse zahlt, wenn die Wahrscheinlichkeit dafür bei mindestens 15&nbsp;% liegt.</li>
+          <li><strong>Wie:</strong> Sie liegen auf dem Rücken, die Aufnahmen dauern nur wenige Minuten. Ein Herzkatheter ist dafür nicht nötig.</li>
+          <li><strong>Ergebnis:</strong> Ein unauffälliges Herz-CT schließt eine relevante Verengung sehr zuverlässig aus. Ihre Praxis erhält einen Befund mit Empfehlung zum weiteren Vorgehen.</li>
+        </ul>
+        <p class="hct-note"><strong>Akute Brustschmerzen, Atemnot oder Engegefühl in Ruhe?</strong> Das kann ein Herzinfarkt sein. Rufen Sie sofort den Notruf <a href="tel:112">112</a>. Das Herz-CT ist eine geplante Untersuchung und nicht für Notfälle gedacht.</p>
+      </div>
+      <div>
+        <!-- @include contact id="hub" mod="hct-contact--stack" heading="Kontakt und Anmeldung" -->
+      </div>
+    </div>
+  </section>
 </main>
 <!-- @include site-footer base="" -->
 </body>

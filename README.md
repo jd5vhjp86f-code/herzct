@@ -6,12 +6,14 @@ Statischer Prototyp (HTML/CSS/Vanilla-JS) der neuen Unterseite zur CT-Koronarang
 
 ## Seiten
 
-| URL | Inhalt |
-|---|---|
-| `/herz-ct/` | Hub: Hero mit Herz-Symbol, Zielgruppen-Weiche, Kurzinfo, Notfallhinweis, Kontakt |
-| `/herz-ct/patienten/` | Zwei Untersuchungen (CCTA, Kalk-Score), Voraussetzungen GKV/PKV, **Vorbereitungs-Check**, Ablauf, Nutzen/Risiken, FAQ |
-| `/herz-ct/zuweiser/` | Indikation nach MVV-RL Anl. I Nr. 42, **VTW-Rechner** (Marburger Herz-Score / NVL Tabelle 6) mit Textbaustein für die Überweisung, druckbare Checkliste, Ablauf, Befundinhalte, EBM 34370/34371, Quellen |
-| `/` | Prototyp-Übersicht, Teaser für Startseite und `/ct-diagnostik`, Leitbild-Varianten |
+Online: **https://herz.rosenbaum.hamburg/** (Prototyp, `noindex`). Im Prototyp liegen die Seiten im Wurzelpfad, im Theme später unter `/herz-ct`.
+
+| Prototyp-URL | Theme-URL | Inhalt |
+|---|---|---|
+| `/` | `/herz-ct` | Hub: Hero mit Herz-Symbol, Zielgruppen-Weiche, Kurzinfo, Notfallhinweis, Kontakt |
+| `/patienten/` | `/herz-ct/patienten` | Zwei Untersuchungen (CCTA, Kalk-Score), Voraussetzungen GKV/PKV, **Vorbereitungs-Check**, Ablauf, Nutzen/Risiken, FAQ |
+| `/zuweiser/` | `/herz-ct/zuweiser` | Indikation nach MVV-RL Anl. I Nr. 42, **VTW-Rechner** (Marburger Herz-Score / NVL Tabelle 6) mit Textbaustein für die Überweisung, druckbare Checkliste, Ablauf, Befundinhalte, EBM 34370/34371, Quellen |
+| `/prototyp/` | entfällt | Prototyp-Übersicht, Teaser für Startseite und `/ct-diagnostik`, Leitbild-Varianten |
 
 ## Design
 
@@ -26,7 +28,14 @@ Statischer Prototyp (HTML/CSS/Vanilla-JS) der neuen Unterseite zur CT-Koronarang
 python3 -m http.server 8080 -d public   # dann http://localhost:8080 öffnen
 ```
 
-Online über GitHub Pages: *Settings → Pages → Source: „GitHub Actions“*. Der Workflow `Prototyp` testet, baut und veröffentlicht danach jeden Push auf den Standard-Branch. Eine eigene Domain (z. B. `herzct.rosenbaum.hamburg`) kann wie bei `ldct` unter *Custom domain* eingetragen werden.
+**Online:** https://herz.rosenbaum.hamburg/ (GitHub Pages mit eigener Domain). Einrichtung einmalig:
+
+1. *Settings → General → Default branch:* `main`
+2. *Settings → Pages → Build and deployment → Source:* „GitHub Actions“
+3. *Settings → Pages → Custom domain:* `herz.rosenbaum.hamburg` eintragen, nach erfolgreicher DNS-Prüfung „Enforce HTTPS“ aktivieren
+4. DNS (IONOS): `herz` als CNAME auf `jd5vhjp86f-code.github.io`
+
+Der Workflow `Prototyp` veröffentlicht danach jeden Push auf `main`. `public/CNAME` wird vom Build erzeugt; bei Veröffentlichung über GitHub Actions ist aber die Einstellung unter *Custom domain* maßgeblich.
 
 > Eine Pages-Seite ist öffentlich erreichbar. Der Prototyp ist per `noindex` und `robots.txt` gesperrt, enthält aber noch nicht freigegebene medizinische Inhalte. Link nur gezielt weitergeben.
 
@@ -35,7 +44,7 @@ Online über GitHub Pages: *Settings → Pages → Source: „GitHub Actions“*
 ```bash
 npm test                        # Unit-Tests der VTW-Logik (node --test)
 node tools/build.mjs            # src/ + assets/ → public/
-node tools/build.mjs --agentur  # Produktionsfassung nach dist/agentur/ (ohne Prototyp-Rahmen, Assets unter /themes/ohjunge/assets/hct/)
+node tools/build.mjs --agentur  # Produktionsfassung nach dist/agentur/herz-ct/ (ohne Prototyp-Rahmen, Links unter /herz-ct, Assets unter /themes/ohjunge/assets/hct/)
 node tools/contrast.mjs         # WCAG-Kontraste der Tokens
 ```
 
