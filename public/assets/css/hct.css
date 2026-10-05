@@ -672,3 +672,6 @@ span.hct-pruefen { display: inline; padding: 0 0.2em; }
 .hct .hct-calc__privacy { max-width: none; }
 /* Einleitungstexte, die die volle Spaltenbreite nutzen sollen (weniger Umbrüche) */
 .hct .hct-wide { max-width: none; }
+/* Hero-Überschrift immer einzeilig (Zuweisende): „HERZ-CT FÜR ZUWEISENDE“ ist ca. 13,9 Schriftgrade breit,
+   6,6cqi lässt rund 8 % Reserve für die Theme-Schrift */
+.hct-hero .hct-h1.hct-h1--oneline { font-size: min(var(--hct-fs-h1), 6.6cqi); white-space: nowrap; }
