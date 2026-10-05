@@ -1,0 +1,87 @@
+<div class="hct-calc" data-hct-vtw>
+  <form class="hct-calc__form" novalidate aria-labelledby="{{id}}-calc-h">
+    <h3 class="hct-visually-hidden" id="{{id}}-calc-h">Vortestwahrscheinlichkeit ermitteln</h3>
+    <fieldset>
+      <legend>Versorgungsebene und Methode</legend>
+      <div class="hct-choice">
+        <label><input type="radio" name="mode" value="marburg" checked> Hausärztlich: Marburger Herz-Score</label>
+        <label><input type="radio" name="mode" value="discharge"> Fachärztlich: NVL Tabelle 6 (DISCHARGE)</label>
+      </div>
+    </fieldset>
+
+    <div data-mode="marburg">
+      <fieldset>
+        <legend>Was trifft zu? <span class="hct-field__hint">(je 1 Punkt)</span></legend>
+        <div class="hct-checks">
+          <div class="hct-check"><input type="checkbox" id="{{id}}-ageSex" name="ageSex"><label for="{{id}}-ageSex">Geschlecht und Alter: Männer ≥ 55 Jahre, Frauen ≥ 65 Jahre</label></div>
+          <div class="hct-check"><input type="checkbox" id="{{id}}-vascular" name="vascular"><label for="{{id}}-vascular">Bekannte vaskuläre Erkrankung</label></div>
+          <div class="hct-check"><input type="checkbox" id="{{id}}-exertional" name="exertional"><label for="{{id}}-exertional">Beschwerden sind belastungsabhängig</label></div>
+          <div class="hct-check"><input type="checkbox" id="{{id}}-notPalpable" name="notPalpable"><label for="{{id}}-notPalpable">Schmerzen sind durch Palpation nicht reproduzierbar</label></div>
+          <div class="hct-check"><input type="checkbox" id="{{id}}-patientCardiac" name="patientCardiac"><label for="{{id}}-patientCardiac">Patientin/Patient vermutet, dass der Schmerz vom Herzen kommt</label></div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div data-mode="discharge" hidden>
+      <div class="hct-row">
+        <div class="hct-field">
+          <label for="{{id}}-age">Alter in Jahren</label>
+          <input type="number" id="{{id}}-age" name="age" inputmode="numeric" min="30" max="110" step="1" aria-describedby="{{id}}-age-err">
+          <span class="hct-field__error" id="{{id}}-age-err" data-error="age"></span>
+        </div>
+        <fieldset>
+          <legend>Geschlecht</legend>
+          <div class="hct-choice">
+            <label><input type="radio" name="sex" value="f" aria-describedby="{{id}}-sex-err"> weiblich</label>
+            <label><input type="radio" name="sex" value="m" aria-describedby="{{id}}-sex-err"> männlich</label>
+          </div>
+          <span class="hct-field__error" id="{{id}}-sex-err" data-error="sex"></span>
+        </fieldset>
+      </div>
+      <fieldset>
+        <legend>Angina-Kriterien <span class="hct-field__hint">(Hilfe zur Einordnung)</span></legend>
+        <div class="hct-checks">
+          <div class="hct-check"><input type="checkbox" id="{{id}}-location" name="location"><label for="{{id}}-location">Einengende Beschwerden retrosternal oder in Nacken, Schulter, Kiefer oder Arm</label></div>
+          <div class="hct-check"><input type="checkbox" id="{{id}}-exertion" name="exertion"><label for="{{id}}-exertion">Verstärkt durch körperliche Belastung oder emotionalen Stress</label></div>
+          <div class="hct-check"><input type="checkbox" id="{{id}}-relief" name="relief"><label for="{{id}}-relief">Besserung durch Ruhe und/oder Nitro innerhalb von 5 Minuten</label></div>
+        </div>
+        <p class="hct-field__hint" data-out="suggestion" aria-live="polite"></p>
+      </fieldset>
+      <fieldset>
+        <legend>Art der Beschwerden</legend>
+        <div class="hct-choice hct-choice--stack">
+          <label><input type="radio" name="symptom" value="typical" aria-describedby="{{id}}-symptom-err"> typische Angina pectoris (3 Kriterien)</label>
+          <label><input type="radio" name="symptom" value="atypical" aria-describedby="{{id}}-symptom-err"> atypische Angina pectoris (2 Kriterien)</label>
+          <label><input type="radio" name="symptom" value="nonanginal" aria-describedby="{{id}}-symptom-err"> nicht-anginöse Brustschmerzen (0–1 Kriterium)</label>
+          <label><input type="radio" name="symptom" value="other" aria-describedby="{{id}}-symptom-err"> andere Brustschmerzen</label>
+        </div>
+        <span class="hct-field__error" id="{{id}}-symptom-err" data-error="symptom"></span>
+      </fieldset>
+    </div>
+    <div><button class="hct-btn" type="submit">Ergebnis anzeigen</button></div>
+  </form>
+
+  <div class="hct-calc__result" data-state="empty" tabindex="-1" aria-labelledby="{{id}}-res-h">
+    <h3 class="hct-h3" id="{{id}}-res-h" style="margin:0">Ergebnis zur Orientierung</h3>
+    <dl class="hct-figure"><div><dt>Vortestwahrscheinlichkeit</dt><dd data-out="vtw">–</dd></div></dl>
+    <p class="hct-small" data-out="method"></p>
+    <div class="hct-bar hct-bar--vtw">
+      <div class="hct-bar__track" role="meter" aria-label="Vortestwahrscheinlichkeit" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="hct-bar__fill"></div></div>
+      <span class="hct-bar__mark" style="left:15%"><span>15 %</span></span>
+      <span class="hct-bar__mark" style="left:50%"><span>50 %</span></span>
+      <span class="hct-bar__mark" style="left:85%"><span>85 %</span></span>
+    </div>
+    <p class="hct-calc__message"></p>
+    <div class="hct-calc__details">
+      <p class="hct-calc__verdict"><strong data-out="title"></strong></p>
+      <p data-out="text"></p>
+      <p class="hct-small" data-out="hint"></p>
+      <h4 class="hct-h3">Für die Überweisung</h4>
+      <p class="hct-small">Der EBM verlangt für die GOP 34370 eine Überweisung mit Angabe der VTW (Ergebnis und Art der Ermittlung).</p>
+      <p class="hct-summary" data-out="summary"></p>
+      <div class="hct-actions"><button class="hct-btn hct-btn--ghost hct-btn--small" type="button" data-action="copy">Text kopieren</button><span class="hct-copy-status" data-out="copyStatus" role="status"></span></div>
+    </div>
+    <p class="hct-visually-hidden" aria-live="polite" data-out="live"></p>
+  </div>
+  <p class="hct-calc__privacy"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Die Eingaben verlassen Ihr Gerät nicht und werden nicht gespeichert. Das Ergebnis ersetzt nicht die ärztliche Gesamtbeurteilung.</p>
+</div>

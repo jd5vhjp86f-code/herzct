@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="de">
+<head>
+<!-- @include head base="" path="/" title="Prototyp Herz-CT – Übersicht" description="Übersicht über den statischen Prototyp der Unterseite Herz-CT der Radiologie Dammtor." -->
+</head>
+<body class="hct">
+<!-- @include site-header base="" -->
+<main id="inhalt" class="hct-section">
+  <div class="hct-container">
+    <span class="hct-kicker">Prototyp</span>
+    <h1 class="hct-h1" style="font-size:clamp(1.25rem, 0.6rem + 3.2vw, 2.25rem)">Unterseite <span class="hct-accent">Herz-CT</span></h1>
+    <ul class="hct-dots">
+      <li><a href="herz-ct/">/herz-ct</a> – Hub mit Zielgruppen-Weiche</li>
+      <li><a href="herz-ct/patienten/">/herz-ct/patienten</a> – Patientenbereich mit Vorbereitungs-Check</li>
+      <li><a href="herz-ct/zuweiser/">/herz-ct/zuweiser</a> – Zuweiserbereich mit VTW-Rechner (Marburger Herz-Score, NVL Tabelle 6)</li>
+    </ul>
+    <h2 class="hct-h3">Teaser für Startseite und /ct-diagnostik</h2>
+    <!-- @include teaser id="teaser" base="" -->
+    <h2 class="hct-h3">Leitbild-Varianten</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:2rem;align-items:center">
+      <div style="background:var(--hct-blue);width:220px" class="hct-on-dark hct-hero__art"><!-- @include heart-hero label="Herz-Symbol, Hero-Variante" --></div>
+      <!-- @include heart-small id="demo-s" label="Herz-Symbol, kleine Variante" -->
+      <!-- @include heart-mono id="demo-m" label="Herz-Symbol, monochrome Variante" -->
+    </div>
+  </div>
+</main>
+<!-- @include site-footer base="" -->
+</body>
+</html>

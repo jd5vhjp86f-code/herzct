@@ -1,0 +1,67 @@
+/*
+ * Design-Tokens – Unterseite Herz-CT
+ *
+ * STATUS: Markenfarben aus dem Live-Theme übernommen
+ * (/themes/ohjunge/assets/dist/css/style.css, abgerufen am 05.10.2026):
+ *   bg-mamma #007aa8 · bg-ct #008b92 · bg-ultra #46aa9b · bg-mrt #68b1d4
+ *   bg-main/text-main #7c6e65 · bg-muted #eceae5 · dunkles Taupe #5d534c
+ * Rot (#e2574c) stammt aus dem Herz-Symbol (assets/img/herz-symbol-*.svg).
+ * Schrift des Themes: „urw-din“ (Adobe Fonts, Kit oty8vws). Im Prototyp wird sie
+ * NICHT nachgeladen, das Kit ist an die Praxis-Domain gebunden.
+ * Abweichungen nur hier eintragen, danach `node tools/contrast.mjs`.
+ */
+:root {
+  /* Markenfarben (Live-Theme) */
+  --hct-blue: #007aa8;      /* Theme „mamma“, Hintergrund Herz-Symbol, Hero-Fläche */
+  --hct-petrol: #008b92;    /* Theme „ct“ – Leistungsfarbe CT-Diagnostik */
+  --hct-sage: #46aa9b;      /* Theme „ultra“ */
+  --hct-lightblue: #68b1d4; /* Theme „mrt“, linke Herzhälfte */
+  --hct-taupe: #5d534c;     /* dunkles Theme-Taupe: Text und Headlines (7,5:1 auf Weiß, 6,2:1 auf Sand) */
+  --hct-taupe-theme: #7c6e65; /* Theme „main“ – als Textfarbe nur auf Weiß (4,9:1), auf Sand zu schwach (4,1:1) */
+  --hct-sand: #eceae5;      /* Theme „muted“: Infoboxen, Abschnitte */
+  --hct-red: #e2574c;       /* Herz-Symbol, rechte Herzhälfte – nur Grafik (3,7:1 auf Weiß) */
+  --hct-white: #fff;
+
+  /* Kontrastvarianten (WCAG 2.1 AA; prüfen mit `node tools/contrast.mjs`).
+     Weiß auf --hct-sage (2,8:1), --hct-lightblue (2,4:1) und --hct-red (3,7:1) ist für Text NICHT zulässig,
+     Weiß auf --hct-petrol (4,1:1) nur für große Schrift – daher --hct-petrol-strong. */
+  --hct-blue-text: #08658e;     /* 6,4:1 auf Weiß, 5,4:1 auf Sand */
+  --hct-petrol-text: #007478;   /* 5,6:1 auf Weiß, 4,6:1 auf Sand */
+  --hct-red-text: #b3362c;      /* 6,0:1 auf Weiß, 5,0:1 auf Sand */
+  --hct-red-strong: #b3362c;    /* Flächen mit weißer Schrift (6,0:1) */
+  --hct-petrol-strong: #007273; /* Kontaktbox-Hintergrund, Weiß darauf 5,8:1 */
+  --hct-sage-text: #2d6f62;     /* 5,9:1 auf Weiß */
+
+  --hct-ink: #2a2421;           /* Text/Icons auf Hellblau (6,4:1) */
+
+  --hct-ring: rgba(255, 255, 255, 0.35);
+  --hct-line: #d4d0c5;          /* Theme-Linienfarbe rgb(212 208 197) */
+  --hct-focus: #007aa8;
+
+  /* Typografie: Schrift des Themes (urw-din). Bei der Integration --theme-font setzen
+     oder die Schrift ist über das Theme ohnehin geladen. */
+  --hct-font: var(--theme-font, "urw-din", "DIN Next LT Pro", "DIN 2014", "Barlow", "Helvetica Neue", Arial, "Liberation Sans", sans-serif);
+  --hct-fw-light: 300;
+  --hct-fw-regular: 400;
+  --hct-fw-bold: 700;
+  --hct-fs-kicker: 0.8125rem;
+  --hct-fs-body: 1.0625rem;
+  --hct-fs-small: 0.9375rem;
+  --hct-fs-h1: clamp(2rem, 1.2rem + 3.6vw, 3.5rem);
+  --hct-fs-h2: clamp(1.5rem, 1.1rem + 1.8vw, 2.25rem);
+  --hct-fs-h3: 1.125rem;
+  --hct-lh: 1.6;
+  --hct-tracking-caps: 0.06em;
+
+  /* Abstände und Formen */
+  --hct-space-1: 0.25rem;
+  --hct-space-2: 0.5rem;
+  --hct-space-3: 1rem;
+  --hct-space-4: 1.5rem;
+  --hct-space-5: 2.5rem;
+  --hct-space-6: 4rem;
+  --hct-radius: 4px;
+  --hct-maxw: 72rem;
+  --hct-gutter: 16px;
+  --hct-dot: 0.75rem;
+}

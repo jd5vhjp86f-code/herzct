@@ -1,0 +1,49 @@
+# Testet, baut und veröffentlicht den Prototyp auf GitHub Pages.
+# Die Veröffentlichung läuft nur, wenn GitHub Pages für das Repository aktiviert ist
+# (Settings → Pages → Source: „GitHub Actions“). Sonst werden nur Tests und Build geprüft.
+name: Prototyp
+
+on:
+  push:
+    branches: [main, claude/herz-ct-unterseite-cfe8e5]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: prototyp-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Unit-Tests
+        run: npm test
+      - name: Build
+        run: node tools/build.mjs
+      - name: public/ ist aktuell eingecheckt
+        run: git diff --exit-code -- public || (echo "::error::public/ weicht vom Build ab – bitte 'node tools/build.mjs' ausführen und committen." && exit 1)
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch && github.event.repository.has_pages
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

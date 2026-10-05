@@ -1,0 +1,14 @@
+{
+  "name": "herz-ct-radiologie-dammtor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Statischer Prototyp der Unterseite Herz-CT für radiologie-dammtor.de (Übergabe an die Theme-Agentur)",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "serve": "npx --yes http-server public -p 8080 -c-1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

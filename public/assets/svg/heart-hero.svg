@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="hct-heart hct-heart--hero" viewBox="0 -10 300 290" width="300" height="290" role="img" aria-label="Herz-Symbol der Radiologie Dammtor"><style>.hct-heart__left{fill:#68b1d4}.hct-heart__right{fill:#e2574c}.hct-heart__line{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round}.hct-heart__aorta{stroke:#fff}.hct-heart__target{fill:none;stroke:#eceae5}.hct-heart__rings{color:rgba(255,255,255,.35)}.hct-heart--small .hct-heart__aorta{stroke:#e2574c}.hct-heart--small .hct-heart__target{stroke:#007aa8}</style><rect x="0" y="-10" width="300" height="290" fill="#007aa8"/>
+  <g class="hct-heart__rings" fill="none" stroke="currentColor" stroke-width="1.5">
+    <circle class="hct-heart__ring" cx="150" cy="128" r="86"/>
+    <circle class="hct-heart__ring" cx="150" cy="128" r="112"/>
+    <circle class="hct-heart__ring" cx="150" cy="128" r="138"/>
+  </g>
+  <path class="hct-heart__left" d="M150 100 C150 70 120 58 100 64 C72 72 62 102 70 130 C80 166 120 196 150 222 C142 185 158 140 150 100 Z"/>
+  <path class="hct-heart__right" d="M150 100 C150 70 180 58 200 64 C228 72 238 102 230 130 C220 166 180 196 150 222 C142 185 158 140 150 100 Z"/>
+  <g class="hct-heart__line">
+    <path class="hct-heart__aorta" d="M150 98 C148 62 160 42 180 42 C195 42 201 52 201 62" stroke-width="7"/>
+    <path class="hct-heart__aorta" d="M164 46 V28 M176 42 V25 M188 44 V29" stroke-width="3"/>
+    <path d="M150 100 C156 140 144 182 150 212" stroke-width="4"/>
+    <path d="M152 104 L182 120 L202 152 M148 104 L118 120 L98 152" stroke-width="3.5"/>
+    <path d="M182 120 L208 116 M202 152 L198 178 M118 120 L92 116 M98 152 L102 178 M153 150 L174 168 M149 178 L130 190" stroke-width="2.5"/>
+  </g>
+  <circle class="hct-heart__target" cx="152" cy="127" r="11" stroke-width="2"/>
+</svg>
