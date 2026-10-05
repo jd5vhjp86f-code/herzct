@@ -665,3 +665,6 @@ body.hct { margin: 0; background: var(--hct-white); }
 span.hct-pruefen { display: inline; padding: 0 0.2em; }
 .hct-proto-legal { list-style: none; margin: 0 0 var(--hct-space-3); padding: 0; display: flex; flex-wrap: wrap; gap: var(--hct-space-2) var(--hct-space-4); }
 .hct-proto-legal a { display: inline-block; min-height: 44px; line-height: 44px; }
+/* Hinweiszeilen (z. B. Abrechnung): je Angabe eine Zeile, volle Spaltenbreite */
+.hct-lines { margin-top: var(--hct-space-3); }
+.hct .hct-lines p { max-width: none; margin: 0 0 var(--hct-space-1); }
