@@ -670,3 +670,5 @@ span.hct-pruefen { display: inline; padding: 0 0.2em; }
 .hct .hct-lines p { max-width: none; margin: 0 0 var(--hct-space-1); }
 /* Datenschutzhinweis unter Rechner/Check: volle Breite, damit er auf dem Desktop in eine Zeile passt */
 .hct .hct-calc__privacy { max-width: none; }
+/* Einleitungstexte, die die volle Spaltenbreite nutzen sollen (weniger Umbrüche) */
+.hct .hct-wide { max-width: none; }
