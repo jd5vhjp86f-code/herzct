@@ -35,7 +35,9 @@ python3 -m http.server 8080 -d public   # dann http://localhost:8080 öffnen
 3. *Settings → Pages → Custom domain:* `herz.rosenbaum.hamburg` eintragen, nach erfolgreicher DNS-Prüfung „Enforce HTTPS“ aktivieren
 4. DNS (IONOS): `herz` als CNAME auf `jd5vhjp86f-code.github.io`
 
-Der Workflow `Prototyp` veröffentlicht danach jeden Push auf `main`. `public/CNAME` wird vom Build erzeugt; bei Veröffentlichung über GitHub Actions ist aber die Einstellung unter *Custom domain* maßgeblich.
+Stand 05.10.2026: Schritte 1–3 erledigt, DNS-Eintrag (4) und „Enforce HTTPS“ stehen noch aus.
+
+Der Workflow `Prototyp` veröffentlicht danach jeden Push auf `main`; manuell über *Actions → Prototyp → Run workflow*. Ein Re-Run eines älteren Laufs genügt nicht, weil er den damaligen Event-Stand (`has_pages`) verwendet. `public/CNAME` wird vom Build erzeugt; bei Veröffentlichung über GitHub Actions ist aber die Einstellung unter *Custom domain* maßgeblich.
 
 > Eine Pages-Seite ist öffentlich erreichbar. Der Prototyp ist per `noindex` und `robots.txt` gesperrt, enthält aber noch nicht freigegebene medizinische Inhalte. Link nur gezielt weitergeben.
 

@@ -1,6 +1,8 @@
 # Testet, baut und veröffentlicht den Prototyp auf GitHub Pages (https://herz.rosenbaum.hamburg/).
 # Veröffentlicht wird nur von main und nur, wenn GitHub Pages aktiviert ist
 # (Settings → Pages → Source: „GitHub Actions“). Sonst werden nur Tests und Build geprüft.
+# Manuell auslösen: Actions → Prototyp → „Run workflow“ (Branch main). Ein Re-Run eines alten
+# Laufs reicht nicht, weil er den damaligen Event-Stand (has_pages) verwendet.
 name: Prototyp
 
 on:
