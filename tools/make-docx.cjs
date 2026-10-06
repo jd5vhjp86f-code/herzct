@@ -122,7 +122,7 @@ function laufzettel() {
 function aufklaerung() {
   const yn = 700;
   const qrow = (text, hint) => new TableRow({ children: [
-    cell([p(t(text), { after: hint ? 20 : 0 }), ...(hint ? [p(t(hint, { size: 16, color: C.taupeLight }), { after: 0 }), p(t(''), { before: 260, after: 40, border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: C.taupeLight, space: 1 } } })] : [])], { w: W - 2 * yn, ml: 0, borders: { top: { style: BorderStyle.SINGLE, size: 4, color: C.line }, bottom: none, left: none, right: none } }),
+    cell([p([t(text), ...(hint ? [t(`   ${hint}`, { size: 16, color: C.taupeLight })] : [])], { after: 0 }), ...(hint ? [p(t(''), { before: 200, after: 30, border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: C.taupeLight, space: 1 } } })] : [])], { w: W - 2 * yn, ml: 0, borders: { top: { style: BorderStyle.SINGLE, size: 4, color: C.line }, bottom: none, left: none, right: none } }),
     cell([p(box(), { align: AlignmentType.CENTER, after: 0 })], { w: yn, borders: { top: { style: BorderStyle.SINGLE, size: 4, color: C.line }, bottom: none, left: none, right: none } }),
     cell([p(box(), { align: AlignmentType.CENTER, after: 0 })], { w: yn, borders: { top: { style: BorderStyle.SINGLE, size: 4, color: C.line }, bottom: none, left: none, right: none } }),
   ] });
@@ -130,7 +130,12 @@ function aufklaerung() {
   const q3 = Math.floor(W / 3);
   return [
     header('CT-Diagnostik · Patienteninformation', 'Aufklärung ', 'Herz-CT'), rule(), contact(),
-    p(t('Aufklärung Computertomographie des Herzens', { bold: true, caps: true, size: 20, spacing: 10 }), { after: 100 }),
+    (() => {
+      const w5 = [Math.floor(W * 0.3), Math.floor(W * 0.11), Math.floor(W * 0.11), Math.floor(W * 0.2)];
+      w5.push(W - w5.reduce((a, b) => a + b, 0));
+      return table(w5, [new TableRow({ children: [field('Name Patientin / Patient', w5[0]), field('Größe', w5[1], 'cm'), field('Gewicht', w5[2], 'kg'), field('Handynummer', w5[3]), field('E-Mail-Adresse', w5[4])] })]);
+    })(),
+    p(t('Aufklärung Computertomographie des Herzens', { bold: true, caps: true, size: 20, spacing: 10 }), { before: 160, after: 100 }),
     p(t('Liebe Patientin, lieber Patient,', { bold: true }), { after: 80 }),
     lead('die Computertomografie ist ein Röntgenverfahren, mit dem Schnittbilder von bestimmten Körperteilen bzw. Organen angefertigt werden können. Gegenüber der normalen (konventionellen) Röntgendiagnostik ist die Bildinformation bei der CT-Untersuchung wesentlich höher und viele Organe und krankhafte Veränderungen können besser sichtbar gemacht werden.'),
     lead('Während der Untersuchung liegen Sie in Rückenlage auf dem Untersuchungstisch, der langsam in Längsrichtung durch einen beidseitig offenen Ring fährt. In dem Ring befindet sich eine Röntgenröhre, die bei der Untersuchung um den zu untersuchenden Körperteil kreist.'),
@@ -159,29 +164,21 @@ function aufklaerung() {
       qrow('Haben Sie in den letzten 48 Stunden ein Potenzmittel (z. B. Sildenafil, Tadalafil) eingenommen?'),
       qrow('Haben Sie Asthma?'),
     ]),
-    section(2, 'Angaben zur Person'),
-    table([W], [new TableRow({ children: [field('Name Patientin / Patient', W)] })]),
-    table([q3, q3, W - 2 * q3], [new TableRow({ children: [field('Größe', q3, 'cm'), field('Gewicht', q3, 'kg'), field('Handynummer', W - 2 * q3)] })]),
-    table([W], [new TableRow({ children: [field('E-Mail-Adresse', W)] })]),
-    new Paragraph({ children: [new PageBreak()] }),
-    header('CT-Diagnostik · Patienteninformation', 'Aufklärung ', 'Herz-CT'), rule(),
-    section(3, 'Einverständnis'),
+    section(2, 'Einverständnis'),
     table([W], [new TableRow({ children: [cell([
       p([box(), t('Mit der unten gegebenen Unterschrift bestätige ich, dass ich die Informationen gelesen und verstanden habe. Ich hatte Gelegenheit, im ärztlichen Aufklärungsgespräch Fragen zu stellen. Ich bin mit der Untersuchung, der Kontrastmittelinjektion sowie der Gabe eines Betablockers und von Nitrospray einverstanden.')], { after: 100 }),
       p([box(), t('Duplikat der Aufklärung ausgehändigt        '), box(), t('Patientin / Patient verzichtet auf Duplikat der Aufklärung')], { after: 0 }),
     ], { w: W, fill: C.sand, mt: 120, mb: 120, ml: 160, mr: 160 })] })]),
-    table([Math.floor(W * 0.38), W - Math.floor(W * 0.38)], [new TableRow({ children: [field('Ort, Datum', Math.floor(W * 0.38), '', 480), field('Unterschrift der Patientin / des Patienten', W - Math.floor(W * 0.38), '', 480)] })]),
-    table([Math.floor(W * 0.38), W - Math.floor(W * 0.38)], [new TableRow({ children: [field('Aufklärende Ärztin / Arzt (Name)', Math.floor(W * 0.38), '', 480), field('Datum, Unterschrift Ärztin / Arzt', W - Math.floor(W * 0.38), '', 480)] })]),
-    p(t(''), { after: 160 }),
+    table([Math.floor(W * 0.38), W - Math.floor(W * 0.38)], [new TableRow({ children: [field('Ort, Datum', Math.floor(W * 0.38), '', 360), field('Unterschrift der Patientin / des Patienten', W - Math.floor(W * 0.38), '', 360)] })]),
+    table([Math.floor(W * 0.38), W - Math.floor(W * 0.38)], [new TableRow({ children: [field('Aufklärende Ärztin / Arzt (Name)', Math.floor(W * 0.38), '', 360), field('Datum, Unterschrift Ärztin / Arzt', W - Math.floor(W * 0.38), '', 360)] })]),
     section('+', 'Untersuchungsvorbereitung – vom Personal auszufüllen'),
     table([Math.floor(W / 2), W - Math.floor(W / 2)], [new TableRow({ children: [field('TSH', Math.floor(W / 2)), field('Kreatinin', W - Math.floor(W / 2))] })]),
-    p(t(''), { after: 80 }),
     (() => {
       const cw = [Math.floor(W * 0.26), Math.floor(W * 0.37), W - Math.floor(W * 0.26) - Math.floor(W * 0.37)];
       const b = { style: BorderStyle.SINGLE, size: 4, color: C.line };
       const all = { top: b, bottom: b, left: b, right: b };
       const head = new TableRow({ children: ['Uhrzeit', 'Blutdruck', 'Herzfrequenz'].map((h, i) => cell([p(t(h, { bold: true, size: 16 }), { after: 0 })], { w: cw[i], fill: C.sand, borders: all })) });
-      const rows = [0, 1, 2, 3].map(() => new TableRow({ height: { value: 440, rule: 'atLeast' }, children: cw.map((w) => cell([p(t(''))], { w, borders: all })) }));
+      const rows = [0, 1, 2].map(() => new TableRow({ height: { value: 380, rule: 'atLeast' }, children: cw.map((w) => cell([p(t(''))], { w, borders: all })) }));
       return table(cw, [head, ...rows]);
     })(),
     p([t('Metohexal:   ', { bold: true }), box(), t('nein     '), box(), t('ja, Dosis / Uhrzeit: ______________        '), t('Nitrospray:   ', { bold: true }), box(), t('nein     '), box(), t('ja')], { before: 160 }),

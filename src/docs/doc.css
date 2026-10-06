@@ -160,3 +160,19 @@ h2.sec small { font-weight: 500; text-transform: none; letter-spacing: 0; color:
 .facts p:nth-child(3) { border-left-color: var(--petrol); }
 .facts p:nth-child(4) { border-left-color: var(--lightblue); }
 .facts p:nth-child(5) { border-left-color: var(--taupe-light); }
+/* Aufklärung zweiseitig */
+.who--5 { grid-template-columns: 2.3fr .8fr .8fr 1.3fr 1.8fr; gap: 3.5mm; }
+.consentdoc .lead p { margin-bottom: 1.4mm; }
+.consentdoc .facts { gap: 1.4mm; }
+.consentdoc .facts p { padding: 1.6mm 3mm; font-size: 8.5pt; line-height: 1.3; }
+.consentdoc .q td { padding: 1.3mm 0; }
+.consentdoc .q .fill { height: 4.2mm; margin-top: .4mm; }
+.consentdoc .q .hint { display: inline; margin-left: 2mm; }
+.consentdoc .q .hint + .fill { display: block; }
+.consentdoc .sign { margin-top: 4mm; }
+.consentdoc .staff { padding: 2.4mm 3.5mm; }
+.consentdoc .vitals td { height: 6.5mm; }
+.consentdoc .consent { padding: 2.2mm 3.5mm; }
+.consentdoc .lead p, .consentdoc .facts p { font-size: 9.6pt; line-height: 1.4; }
+.consentdoc .facts { gap: 2mm; }
+.consentdoc .facts p { padding: 2.2mm 3.5mm; }
