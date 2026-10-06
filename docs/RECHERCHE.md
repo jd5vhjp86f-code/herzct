@@ -30,6 +30,15 @@ Tragende Gründe: https://www.g-ba.de/downloads/40-268-10181/2024-01-18_MVV-RL_C
 - Tabelle 7: Strahlenexposition CCTA allgemein < 5 mSv, in bestimmten Fällen 1 mSv; natürliche Jahresdosis ca. 2,5 mSv (Grundlage der Patiententexte zur Strahlung).
 - Kapitel 3.4.4.5: Calcium-Score lässt keine Rückschlüsse auf Stenosen zu, liefert prognostische Information.
 
-## 4. Praxisangaben (Live-Website, abgerufen 05.10.2026)
+## 4. Alter von Kreatinin/eGFR und TSH (Recherche 06.10.2026)
+
+**ESUR Contrast Media Safety Committee Guidelines 2025** – https://www.esur.org/wp-content/uploads/2025/12/Guidelines-2025-ESUR-vf-1.pdf
+
+- *Timing of eGFR measurement:* „Within 7 days before contrast medium administration in patients with an acute disease, an acute deterioration of a chronic disease, or who are hospital inpatients. Within 3 months before contrast medium administration in all other patients.“ → Die Praxisregel „max. 12 Wochen“ liegt für ambulante, stabile Patientinnen und Patienten innerhalb der Leitlinie.
+- *Prevention of iodine-induced hyperthyroidism:* Risikogruppen sind unbehandelter Morbus Basedow sowie multinodöse Struma/Autonomie (besonders Ältere, Jodmangelgebiet). „In patients suspected of being at risk of thyrotoxicosis, TSH measurement may be helpful.“ **Eine Frist für das Alter des TSH-Werts nennt die Leitlinie nicht.** Bei manifester Hyperthyreose kein jodhaltiges Kontrastmittel.
+- Österreichische Schilddrüsengesellschaft, „Röntgenkontrastmittel bei Patienten mit Risiko jodinduzierter Schilddrüsenfunktionsstörungen“: TSH-Bestimmung bei Risikopatienten vor geplanter KM-Gabe, ebenfalls **ohne Frist**; „Es gibt kein evidenzbasiertes Konzept zur Prophylaxe“.
+- Fazit: 12 Wochen für TSH ist eine nachvollziehbare Praxisfestlegung, keine Leitlinienvorgabe. In Deutschland (Jodmangelgebiet, häufige Autonomien) ist die routinemäßige TSH-Bestimmung vor elektiver KM-Gabe verbreitete Praxis.
+
+## 5. Praxisangaben (Live-Website, abgerufen 05.10.2026)
 
 128-Schicht-CT; Termin 040 3500484-0; Privatpatienten MRT/CT 040 3500484-54; Sprechzeiten Mo–Do 8–17, Fr 8–16 Uhr; Doctolib `mammadiagnostik-stephansplatz?pid=practice-79031` (von der Praxis bestätigt); Herz-CT bereits auf `/ct-diagnostik` erwähnt.

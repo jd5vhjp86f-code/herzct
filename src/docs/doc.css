@@ -153,3 +153,10 @@ h2.sec small { font-weight: 500; text-transform: none; letter-spacing: 0; color:
 .compact .head { padding-bottom: 3mm; }
 .compact .foot { padding-top: 2mm; }
 .compact .who { margin-top: 2.4mm; }
+/* Aufklärung: Besonderheiten Herz-CT */
+.facts { display: grid; gap: 2mm; }
+.facts p { margin: 0; padding: 2.2mm 3.5mm; background: var(--sand); border-left: 2.4pt solid var(--blue); border-radius: 1mm; }
+.facts p:nth-child(2) { border-left-color: var(--red); }
+.facts p:nth-child(3) { border-left-color: var(--petrol); }
+.facts p:nth-child(4) { border-left-color: var(--lightblue); }
+.facts p:nth-child(5) { border-left-color: var(--taupe-light); }

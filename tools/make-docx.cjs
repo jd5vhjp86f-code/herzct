@@ -86,7 +86,7 @@ function laufzettel() {
     table(w3, [new TableRow({ children: [field('Name, Vorname', w3[0]), field('Geburtsdatum', w3[1]), field('Termin (Datum, Uhrzeit)', w3[2])] })]),
     ...important([
       [t('Wichtiger Hinweis zur Vorbereitung', { size: 15, bold: true, caps: true, color: C.redText, spacing: 14 })],
-      [t('Für ein scharfes und strahlungsarmes Herz-CT ist eine '), t('ruhige Herzfrequenz (unter 60–65 Schläge pro Minute)', { bold: true }), t(' entscheidend. Bitte befolgen Sie die Hinweise auf diesem Bogen.')],
+      [t('Für ein scharfes und strahlungsarmes Herz-CT ist eine '), t('ruhige Herzfrequenz (unter 60–65 Schläge pro Minute)', { bold: true }), t(' entscheidend. Bitte kommen Sie nicht mit dem eigenen Auto: Nach Betablocker und Nitrospray dürfen Sie nicht selbst fahren.')],
       [t('Bitte unbedingt aktuelle Blutwerte (Kreatinin und TSH) zur Untersuchung mitbringen.', { bold: true })],
     ]),
     section(1, 'Von der überweisenden Praxis auszufüllen'),
@@ -135,6 +135,16 @@ function aufklaerung() {
     lead('die Computertomografie ist ein Röntgenverfahren, mit dem Schnittbilder von bestimmten Körperteilen bzw. Organen angefertigt werden können. Gegenüber der normalen (konventionellen) Röntgendiagnostik ist die Bildinformation bei der CT-Untersuchung wesentlich höher und viele Organe und krankhafte Veränderungen können besser sichtbar gemacht werden.'),
     lead('Während der Untersuchung liegen Sie in Rückenlage auf dem Untersuchungstisch, der langsam in Längsrichtung durch einen beidseitig offenen Ring fährt. In dem Ring befindet sich eine Röntgenröhre, die bei der Untersuchung um den zu untersuchenden Körperteil kreist.'),
     lead('Die Untersuchung ist völlig schmerzfrei und dauert je nach Untersuchungsregion und -ablauf nur wenige Minuten. Häufig wird ein jodhaltiges Kontrastmittel (KM) mittels Druckspritze in eine Vene am Arm gespritzt, um die Organe besser zu beurteilen. Die verwendeten jodhaltigen Kontrastmittel werden in der Regel sehr gut vertragen. Bei Überempfindlichkeit kann es zu leichten Reaktionen kommen, die schnell wieder abklingen (z. B. Hautjucken, Niesen, Hautausschlag). Schwere Kontrastmittelnebenwirkungen sind sehr selten.'),
+    section('i', 'Besonderheiten beim Herz-CT'),
+    ...[
+      ['Medikament zur Senkung der Herzfrequenz (Betablocker, z. B. Metoprolol): ', 'Scharfe Bilder des Herzens gelingen nur bei ruhigem, langsamem Herzschlag. Deshalb erhalten Sie in der Regel vorab und bei Bedarf vor Ort einen Betablocker. Mögliche Nebenwirkungen sind Müdigkeit, Schwindel, ein niedriger Blutdruck oder ein sehr langsamer Puls; bei Asthma kann Atemnot auftreten.', C.blue],
+      ['Nitrospray: ', 'Kurz vor der Aufnahme erhalten Sie meist einen Hub Nitrospray unter die Zunge. Er erweitert die Herzkranzgefäße. Häufig sind vorübergehende Kopfschmerzen, Wärmegefühl oder Schwindel durch einen Blutdruckabfall. Nach Einnahme eines Potenzmittels (z. B. Sildenafil, Tadalafil) in den letzten 48 Stunden darf kein Nitrospray gegeben werden.', C.red],
+      ['Kontrastmittel, Niere und Schilddrüse: ', 'Bei eingeschränkter Nierenfunktion kann das jodhaltige Kontrastmittel die Nieren belasten, bei einer Schilddrüsenüberfunktion kann es diese auslösen oder verstärken. Deshalb benötigen wir aktuelle Werte von Kreatinin und TSH.', C.petrol],
+      ['Strahlung: ', 'Die Untersuchung arbeitet mit Röntgenstrahlung. Mit moderner Technik liegt die Dosis eines Herz-CT meist unter 5 Millisievert (zum Vergleich: natürliche Strahlung in Deutschland ca. 2,5 Millisievert pro Jahr). Sie wird nur durchgeführt, wenn der erwartete Nutzen überwiegt.', '68B1D4'],
+      ['Nach der Untersuchung: ', 'Betablocker und Nitrospray können Ihre Reaktionsfähigkeit vorübergehend einschränken. Bitte fahren Sie am Untersuchungstag nicht selbst Auto und kommen Sie nicht mit dem eigenen Fahrzeug.', C.taupeLight],
+    ].map(([h, txt, col]) => p([t(h, { bold: true }), t(txt)], { shade: C.sand, before: 0, after: 100, line: 280, indent: { left: 120, right: 120 }, border: { left: { style: BorderStyle.SINGLE, size: 18, color: col, space: 6 } } })),
+    new Paragraph({ children: [new PageBreak()] }),
+    header('CT-Diagnostik · Patienteninformation', 'Aufklärung ', 'Herz-CT'), rule(),
     section(1, 'Bitte beantworten Sie uns vor der Untersuchung folgende Fragen'),
     table([W - 2 * yn, yn, yn], [
       new TableRow({ children: [cell([p(t(''))], { w: W - 2 * yn }), cell([p(t('nein', { size: 14, bold: true, caps: true, color: C.taupeLight }), { align: AlignmentType.CENTER, after: 0 })], { w: yn }), cell([p(t('ja', { size: 14, bold: true, caps: true, color: C.taupeLight }), { align: AlignmentType.CENTER, after: 0 })], { w: yn })] }),
@@ -145,21 +155,23 @@ function aufklaerung() {
       qrow('Könnte bei Ihnen eine Schwangerschaft vorliegen?'),
       qrow('Besteht eine Herz-/Kreislauferkrankung (z. B. koronare Herzkrankheit, Bluthochdruck)?', 'Wenn ja, bitte angeben:'),
       qrow('Nehmen Sie Medikamente gegen eine bestehende Herz-/Kreislauferkrankung?', 'Wenn ja, welche?'),
-      qrow('Besteht bei Ihnen eine Infektionskrankheit (HIV, Hepatitis o. ä.)?'),
+      qrow('Haben Sie Herzrhythmusstörungen (z. B. Vorhofflimmern) oder einen Herzschrittmacher?'),
+      qrow('Haben Sie in den letzten 48 Stunden ein Potenzmittel (z. B. Sildenafil, Tadalafil) eingenommen?'),
       qrow('Haben Sie Asthma?'),
     ]),
-    new Paragraph({ children: [new PageBreak()] }),
-    header('CT-Diagnostik · Patienteninformation', 'Aufklärung ', 'Herz-CT'), rule(),
     section(2, 'Angaben zur Person'),
     table([W], [new TableRow({ children: [field('Name Patientin / Patient', W)] })]),
     table([q3, q3, W - 2 * q3], [new TableRow({ children: [field('Größe', q3, 'cm'), field('Gewicht', q3, 'kg'), field('Handynummer', W - 2 * q3)] })]),
     table([W], [new TableRow({ children: [field('E-Mail-Adresse', W)] })]),
+    new Paragraph({ children: [new PageBreak()] }),
+    header('CT-Diagnostik · Patienteninformation', 'Aufklärung ', 'Herz-CT'), rule(),
     section(3, 'Einverständnis'),
     table([W], [new TableRow({ children: [cell([
-      p([box(), t('Mit der unten gegebenen Unterschrift bestätige ich, dass ich die Informationen gelesen und verstanden habe. Ich bin mit einer Kontrastmittelinjektion einverstanden.')], { after: 100 }),
+      p([box(), t('Mit der unten gegebenen Unterschrift bestätige ich, dass ich die Informationen gelesen und verstanden habe. Ich hatte Gelegenheit, im ärztlichen Aufklärungsgespräch Fragen zu stellen. Ich bin mit der Untersuchung, der Kontrastmittelinjektion sowie der Gabe eines Betablockers und von Nitrospray einverstanden.')], { after: 100 }),
       p([box(), t('Duplikat der Aufklärung ausgehändigt        '), box(), t('Patientin / Patient verzichtet auf Duplikat der Aufklärung')], { after: 0 }),
     ], { w: W, fill: C.sand, mt: 120, mb: 120, ml: 160, mr: 160 })] })]),
     table([Math.floor(W * 0.38), W - Math.floor(W * 0.38)], [new TableRow({ children: [field('Ort, Datum', Math.floor(W * 0.38), '', 480), field('Unterschrift der Patientin / des Patienten', W - Math.floor(W * 0.38), '', 480)] })]),
+    table([Math.floor(W * 0.38), W - Math.floor(W * 0.38)], [new TableRow({ children: [field('Aufklärende Ärztin / Arzt (Name)', Math.floor(W * 0.38), '', 480), field('Datum, Unterschrift Ärztin / Arzt', W - Math.floor(W * 0.38), '', 480)] })]),
     p(t(''), { after: 160 }),
     section('+', 'Untersuchungsvorbereitung – vom Personal auszufüllen'),
     table([Math.floor(W / 2), W - Math.floor(W / 2)], [new TableRow({ children: [field('TSH', Math.floor(W / 2)), field('Kreatinin', W - Math.floor(W / 2))] })]),
@@ -172,7 +184,7 @@ function aufklaerung() {
       const rows = [0, 1, 2, 3].map(() => new TableRow({ height: { value: 440, rule: 'atLeast' }, children: cw.map((w) => cell([p(t(''))], { w, borders: all })) }));
       return table(cw, [head, ...rows]);
     })(),
-    p([t('Metohexal:   ', { bold: true }), box(), t('nein     '), box(), t('ja')], { before: 160 }),
+    p([t('Metohexal:   ', { bold: true }), box(), t('nein     '), box(), t('ja, Dosis / Uhrzeit: ______________        '), t('Nitrospray:   ', { bold: true }), box(), t('nein     '), box(), t('ja')], { before: 160 }),
   ];
 }
 

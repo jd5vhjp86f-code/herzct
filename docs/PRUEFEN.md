@@ -8,7 +8,7 @@ Alle offenen Stellen sind im Prototyp orange gestrichelt mit „PRÜFEN“ marki
 | 2 | ~~Laborwerte: Alter~~ | – | ✅ max. 12 Wochen (Laufzettel, 06.10.2026) |
 | 3 | ~~Nüchternheit~~ | – | ✅ nicht streng nüchtern, kein schweres Essen unmittelbar vorher, stilles Wasser (Laufzettel) |
 | 4 | Koffein/Nikotin: **„am Tag der Untersuchung“** (Hinweis 06.10.2026) oder **„12 Std. vorher“** (alter Laufzettel)? | Patienten, Laufzettel | Vorerst beides kombiniert: „am Tag der Untersuchung, mindestens 12 Stunden vorher“ – bitte bestätigen |
-| 5 | Fahrtüchtigkeit nach Betablocker/Nitro | Patienten | Dauer ✅ ca. 1,5–2 Stunden |
+| 5 | ~~Fahrtüchtigkeit, Dauer~~ | – | ✅ Dauer ca. 1,5–2 Stunden; nicht selbst Auto fahren (06.10.2026, freigegeben mit Aufklärungsbogen) |
 | 6 | Befundlaufzeit, Übermittlungsweg (KIM/Fax/Post), Patientenkopie/Bildportal | Patienten, Zuweiser | |
 | 7 | Kooperationspartner Kardiologie für Fallkonferenz (GOP 34371) | Patienten, Zuweiser | Radiologie + Kardiologie Pflicht |
 | 8 | Genehmigung der KV Hamburg nach Strahlendiagnostik-Vereinbarung: Datum, befundende Ärztinnen/Ärzte | Zuweiser | Voraussetzung für GOP 34370 |
@@ -28,8 +28,8 @@ Neu gestaltet nach den Vorlagen der Praxis: `src/docs/*.html` → PDF (`node too
 | 15 | Laufzettel: „Vom **kardiologischen** Zuweiser auszufüllen“ | Geändert in „Von der überweisenden Praxis“, da auch Hausarztpraxen überweisen dürfen |
 | 16 | Laufzettel: neu ergänzte Felder | Name/Geburtsdatum/Termin, **VTW mit Art der Ermittlung** (EBM-Pflicht), Praxisstempel; bei „Bitte mitbringen“ Überweisung/Versichertenkarte und Aufklärungsbogen |
 | 17 | Laufzettel: Metoprolol „am CT-Morgen“ vs. „ca. 2 Stunden vor dem Termin“ | Vereinheitlicht auf „ca. 2 Stunden vor dem Termin“ |
-| 18 | Aufklärungsbogen: Text unverändert übernommen. **Empfehlung zur Ergänzung** (fachliche/rechtliche Entscheidung): Hinweise zu Betablocker und Nitrospray (Wirkungen, Nebenwirkungen, Fahrtüchtigkeit), zur Strahlenexposition und ein Feld für die Unterschrift der aufklärenden Ärztin / des aufklärenden Arztes (§ 630e BGB: mündliche ärztliche Aufklärung) | Der Bogen beschreibt bisher eine allgemeine CT, nicht die Herz-spezifische Vorbereitung |
-| 19 | Aufklärungsbogen: Frage nach Infektionskrankheiten (HIV, Hepatitis) | Ist die Angabe für die Untersuchung erforderlich (Datensparsamkeit)? |
+| 18 | ✅ **Umgesetzt (06.10.2026):** Abschnitt „Besonderheiten beim Herz-CT“, Fragen zu Herzrhythmus und Potenzmitteln, erweiterte Einwilligung, Unterschrift der aufklärenden Ärztin / des Arztes, Nitrospray im Personalteil. Ursprüngliche Empfehlung: (fachliche/rechtliche Entscheidung): Hinweise zu Betablocker und Nitrospray (Wirkungen, Nebenwirkungen, Fahrtüchtigkeit), zur Strahlenexposition und ein Feld für die Unterschrift der aufklärenden Ärztin / des aufklärenden Arztes (§ 630e BGB: mündliche ärztliche Aufklärung) | Der Bogen beschreibt bisher eine allgemeine CT, nicht die Herz-spezifische Vorbereitung |
+| 19 | ✅ Frage nach Infektionskrankheiten (HIV, Hepatitis) gestrichen (06.10.2026) | Für die Untersuchung nicht erforderlich; Hygienemaßnahmen gelten ohnehin für alle |
 
 Korrigierte Schreibfehler des alten Laufzettels: „WOCHEM“, sichtbare Markdown-Sternchen „**…**“.
 
