@@ -116,26 +116,34 @@
       <span class="hct-kicker">Gut vorbereitet</span>
       <h2 class="hct-h2" id="vorbereitung-h">Vorbereitungs-<span class="hct-accent">Check</span></h2>
       <p class="hct-wide">Einige Erkrankungen und Medikamente sind für das Herz-CT wichtig. Kreuzen Sie an, was auf Sie zutrifft. Sie erhalten dann passende Hinweise für die Terminvereinbarung.</p>
+      <p class="hct-note hct-wide"><strong>Bitte unbedingt aktuelle Blutwerte (Kreatinin und TSH) zur Untersuchung mitbringen.</strong></p>
       <!-- @include prep-check id="prep" -->
       <div class="hct-grid-2" style="margin-top:var(--hct-space-5)">
         <div>
           <h3 class="hct-h3">Bitte mitbringen</h3>
           <ul class="hct-dots">
+            <li><strong>Aktuelle Blutwerte: Kreatinin (eGFR) und TSH,</strong> nicht älter als 12 Wochen</li>
+            <li>den von Ihrer Praxis ausgefüllten <strong>Laufzettel</strong> und den <strong>Aufklärungsbogen</strong> (siehe unten)</li>
             <li>Überweisung (gesetzlich Versicherte) und Versichertenkarte</li>
-            <li>aktuellen Medikationsplan</li>
-            <li><span class="hct-pruefen">aktuelle Laborwerte: Kreatinin (eGFR) und TSH, nicht älter als … Wochen</span></li>
-            <li>Vorbefunde, falls vorhanden: EKG, Belastungs-EKG, Herzultraschall, frühere Herzuntersuchungen</li>
+            <li>aktuellen Medikamentenplan</li>
+            <li>Vorbefunde, falls vorhanden: EKG, Herzultraschall, Herzkatheter</li>
           </ul>
         </div>
         <div>
           <h3 class="hct-h3">Am Untersuchungstag</h3>
           <ul class="hct-dots">
-            <li><span class="hct-pruefen">… Stunden vorher nichts essen; Wasser trinken ist erlaubt.</span></li>
-            <li><span class="hct-pruefen">Ab … Stunden vorher keinen Kaffee, schwarzen oder grünen Tee, keine Cola und keine Energy-Drinks: Koffein beschleunigt den Puls.</span></li>
-            <li>Ihre gewohnten Medikamente nehmen Sie ein, sofern wir nichts anderes mit Ihnen besprochen haben.</li>
-            <li><span class="hct-pruefen">Planen Sie für den Termin insgesamt etwa … Minuten ein. Wenn Sie ein Medikament zur Senkung der Herzfrequenz erhalten, fahren Sie danach bitte nicht selbst Auto.</span></li>
+            <li><strong>Kein Koffein, kein Nikotin:</strong> Wir bitten Sie, am Tag der Untersuchung (mindestens 12 Stunden vorher) kein Nikotin oder Koffein zu sich zu nehmen – also keinen Kaffee, keine Cola, keine Energy-Drinks, keinen schwarzen oder grünen Tee. Beides beschleunigt den Puls.</li>
+            <li><strong>Betablocker:</strong> Hat Ihre Praxis Ihnen Metoprolol 50&nbsp;mg verordnet, nehmen Sie 1 Tablette ca. 2 Stunden vor dem Termin mit etwas Wasser ein. Nehmen Sie bereits regelmäßig einen Betablocker, halten Sie bitte Rücksprache mit Ihrer Ärztin oder Ihrem Arzt.</li>
+            <li><strong>Essen und Trinken:</strong> Sie müssen nicht streng nüchtern sein. Vermeiden Sie schweres Essen unmittelbar vor dem Termin und trinken Sie ausreichend stilles Wasser.</li>
+            <li><strong>Dauer:</strong> Planen Sie insgesamt ca. 1,5–2 Stunden ein. <span class="hct-pruefen">Wenn Sie ein Medikament zur Senkung der Herzfrequenz erhalten, fahren Sie danach bitte nicht selbst Auto.</span></li>
           </ul>
         </div>
+      </div>
+      <h3 class="hct-h3" id="unterlagen" style="margin-top:var(--hct-space-5)">Unterlagen zum Herunterladen</h3>
+      <p class="hct-wide">Den Laufzettel füllt Ihre überweisende Praxis aus. Den Aufklärungsbogen können Sie gern vorab ausdrucken, in Ruhe lesen und ausgefüllt mitbringen.</p>
+      <div class="hct-docs">
+        <!-- @include doc-card base="../" file="laufzettel-herz-ct-radiologie-dammtor.pdf" img="vorschau-laufzettel.png" title="Patienten-Laufzettel Herz-CT" text="Angaben Ihrer Praxis, Vorbereitung am Untersuchungstag, Ablauf und was Sie mitbringen." meta="PDF, 1 Seite, A4" -->
+        <!-- @include doc-card base="../" file="aufklaerung-herz-ct-radiologie-dammtor.pdf" img="vorschau-aufklaerung.png" title="Aufklärung Herz-CT" text="Informationen zur Untersuchung und zum Kontrastmittel, Fragebogen und Einverständnis." meta="PDF, 2 Seiten, A4" -->
       </div>
     </div>
   </section>
@@ -149,7 +157,7 @@
           <span class="hct-process__icon"><!-- @include icon-ueberweisung --></span>
           <div>
             <h3 class="hct-process__title">Überweisung</h3>
-            <div class="hct-process__body"><p>Ihre Arztpraxis untersucht Sie, schätzt die Wahrscheinlichkeit einer KHK ein und stellt die Überweisung aus.</p></div>
+            <div class="hct-process__body"><p>Ihre Arztpraxis untersucht Sie, schätzt die Wahrscheinlichkeit einer KHK ein, füllt den Laufzettel aus und verordnet bei Bedarf einen Betablocker.</p></div>
           </div>
         </li>
         <li class="hct-process__step">
@@ -162,15 +170,15 @@
         <li class="hct-process__step">
           <span class="hct-process__icon"><!-- @include icon-beratung --></span>
           <div>
-            <h3 class="hct-process__title">Aufklärung</h3>
-            <div class="hct-process__body"><p>Wir besprechen Fragebogen, Laborwerte und Medikamente mit Ihnen. Sie erhalten einen Venenzugang und EKG-Elektroden. Ist der Puls zu schnell, bekommen Sie ein Medikament, das ihn senkt.</p></div>
+            <h3 class="hct-process__title">Ankunft und Puls-Check</h3>
+            <div class="hct-process__body"><p>Anmeldung mit Laufzettel, Laborwerten und Aufklärungsbogen. EKG und Blutdruckmessung; ist der Puls noch zu schnell, erhalten Sie bei Bedarf weiteren Betablocker.</p></div>
           </div>
         </li>
         <li class="hct-process__step">
           <span class="hct-process__icon"><!-- @include icon-ct --></span>
           <div>
             <h3 class="hct-process__title">Untersuchung</h3>
-            <div class="hct-process__body"><p>Sie liegen auf dem Rücken und halten auf Ansage kurz die Luft an. Zuerst die Kalkmessung, dann die Aufnahme mit Kontrastmittel. Oft gibt es vorher einen Hub Nitrospray, der die Gefäße weitet.</p></div>
+            <div class="hct-process__body"><p>Venenzugang, kurz vorher Nitrospray, das die Gefäße weitet. Sie liegen auf dem Rücken und halten auf Ansage kurz die Luft an; die Aufnahme selbst dauert nur wenige Sekunden. Danach folgt eine kurze Nachbeobachtung.</p></div>
           </div>
         </li>
         <li class="hct-process__step">
@@ -223,11 +231,11 @@
         </details>
         <details>
           <summary>Wie lange dauert die Untersuchung?</summary>
-          <div><p>Die eigentlichen Aufnahmen dauern nur wenige Minuten. Mit Vorbereitung, Aufklärung und kurzer Nachbeobachtung sollten Sie mehr Zeit einplanen.</p><p class="hct-pruefen">Gesamtdauer: etwa … Minuten.</p></div>
+          <div><p>Die eigentlichen Aufnahmen dauern nur wenige Minuten. Mit Vorbereitung, Aufklärung und kurzer Nachbeobachtung sollten Sie mehr Zeit einplanen.</p><p>Planen Sie für den gesamten Termin ca. 1,5–2 Stunden ein.</p></div>
         </details>
         <details>
           <summary>Warum muss mein Puls langsam sein?</summary>
-          <div><p>Bei einem ruhigen, langsamen Herzschlag werden die Bilder schärfer. Angestrebt wird nach der Richtlinie eine Herzfrequenz von höchstens 60 Schlägen pro Minute. Ist Ihr Puls höher, erhalten Sie meist ein Medikament (Betablocker), das ihn vorübergehend senkt.</p></div>
+          <div><p>Bei einem ruhigen, langsamen Herzschlag werden die Bilder schärfer. Angestrebt wird nach der Richtlinie eine Herzfrequenz von höchstens 60 Schlägen pro Minute. Deshalb verordnet Ihre Praxis meist eine Tablette Metoprolol, die Sie ca. 2 Stunden vor dem Termin einnehmen. Ist der Puls vor Ort noch zu hoch, geben wir bei Bedarf eine weitere Dosis.</p></div>
         </details>
         <details>
           <summary>Wie hoch ist die Strahlenbelastung?</summary>

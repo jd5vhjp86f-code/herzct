@@ -50,6 +50,7 @@
         <li style="--lane:var(--hct-blue)"><a href="#indikation">Indikation</a></li>
         <li style="--lane:var(--hct-lightblue)"><a href="#rechner">VTW-Rechner</a></li>
         <li style="--lane:var(--hct-petrol)"><a href="#checkliste">Checkliste Überweisung</a></li>
+        <li style="--lane:var(--hct-sage)"><a href="#unterlagen">Laufzettel</a></li>
         <li style="--lane:var(--hct-red)"><a href="#ablauf">Ablauf</a></li>
         <li style="--lane:var(--hct-blue)"><a href="#befund">Befund</a></li>
         <li style="--lane:var(--hct-lightblue)"><a href="#abrechnung">Abrechnung</a></li>
@@ -113,13 +114,23 @@
           <li><span><strong>Auftrag:</strong> „CT-Koronarangiographie bei Verdacht auf chronische KHK (MVV-RL Anl. I Nr. 42)“</span></li>
           <li><span><strong>Vortestwahrscheinlichkeit</strong> mit Ergebnis und Art der Ermittlung (z.&nbsp;B. Marburger Herz-Score oder NVL Tabelle 6) – Pflichtangabe für die GOP 34370</span></li>
           <li><span><strong>Vorbefunde</strong> der Basisdiagnostik, z.&nbsp;B. Ruhe-EKG, Echokardiographie, Belastungsuntersuchungen</span></li>
-          <li><span class="hct-pruefen"><strong>Laborwerte:</strong> Kreatinin/eGFR und TSH (nicht älter als … Wochen); weitere Laborbefunde der Vordiagnostik</span></li>
+          <li><span><strong>Laborwerte:</strong> Kreatinin/eGFR und TSH, nicht älter als 12 Wochen; weitere Laborbefunde der Vordiagnostik</span></li>
           <li><span><strong>Medikation</strong>, insbesondere Betablocker, Metformin und PDE-5-Hemmer</span></li>
           <li><span><strong>Bekannte Unverträglichkeit</strong> jodhaltiger Kontrastmittel, Schilddrüsenerkrankungen, eingeschränkte Nierenfunktion</span></li>
-          <li><span><strong>Herzrhythmus:</strong> Vorhofflimmern oder andere Arrhythmien, Ruhe-Herzfrequenz; Kontraindikationen gegen Betablocker oder Nitrate (z.&nbsp;B. schweres Asthma, Hypotonie, höhergradige Klappenstenose)</span></li>
+          <li><span><strong>Herzrhythmus:</strong> Vorhofflimmern oder andere Arrhythmien, in der Praxis gemessener Ruhepuls; Kontraindikationen gegen Betablocker oder Nitrate (z.&nbsp;B. AV-Block II°/III°, schweres Asthma bronchiale, akute Herzinsuffizienz, Hypotonie)</span></li>
+          <li><span><strong>Metoprolol 50&nbsp;mg</strong> verordnen oder mitgeben, sofern keine Kontraindikation besteht: 1 Tablette ca. 2 Stunden vor dem Termin (Ziel: Herzfrequenz unter 60–65/min)</span></li>
+          <li><span><strong>Laufzettel</strong> ausgefüllt mitgeben (Download unten)</span></li>
         </ul>
         <div class="hct-actions hct-no-print">
           <button class="hct-btn hct-btn--ghost hct-btn--small" type="button" data-action="print-checklist">Checkliste drucken</button>
+        </div>
+      </div>
+      <div class="hct-no-print" id="unterlagen">
+        <h3 class="hct-h3" style="margin-top:var(--hct-space-5)">Laufzettel und Aufklärung für Ihre Patientinnen und Patienten</h3>
+        <p class="hct-wide">Bitte füllen Sie den Laufzettel aus und geben Sie ihn zusammen mit dem Aufklärungsbogen mit. Beide Dokumente sind auch im Patientenbereich verlinkt.</p>
+        <div class="hct-docs">
+          <!-- @include doc-card base="../" file="laufzettel-herz-ct-radiologie-dammtor.pdf" img="vorschau-laufzettel.png" title="Patienten-Laufzettel Herz-CT" text="Indikation, VTW, eGFR, TSH, Ruhepuls, Metoprolol-Verordnung; Vorbereitung und Ablauf für die Patientin oder den Patienten." meta="PDF, 1 Seite, A4" -->
+          <!-- @include doc-card base="../" file="aufklaerung-herz-ct-radiologie-dammtor.pdf" img="vorschau-aufklaerung.png" title="Aufklärung Herz-CT" text="Patienteninformation zur CT und zum Kontrastmittel, Fragebogen und Einverständnis." meta="PDF, 2 Seiten, A4" -->
         </div>
       </div>
     </div>
@@ -136,7 +147,7 @@
           <li class="hct-lane-kardio">Kardiologie</li>
         </ul>
         <ol class="hct-swim__list">
-          <li class="hct-lane-praxis"><span class="hct-swim__lane">Zuweisende Praxis</span><span>Anamnese, Basisdiagnostik und Bestimmung der VTW; Überweisung mit Angabe der VTW und Vorbefunden.</span></li>
+          <li class="hct-lane-praxis"><span class="hct-swim__lane">Zuweisende Praxis</span><span>Anamnese, Basisdiagnostik und Bestimmung der VTW; Überweisung mit Angabe der VTW und Vorbefunden, ausgefüllter Laufzettel, ggf. Metoprolol-Verordnung.</span></li>
           <li class="hct-lane-dammtor"><span class="hct-swim__lane">Radiologie Dammtor</span><span>Terminvergabe, Prüfung von Indikation, Laborwerten und Medikation; Aufklärung.</span></li>
           <li class="hct-lane-dammtor"><span class="hct-swim__lane">Radiologie Dammtor</span><span>Native Darstellung mit Bestimmung des Koronarkalks, danach CCTA mit EKG-getriggerter Akquisition. Zielherzfrequenz ≤&nbsp;60/min, ggf. pharmakologisch.</span></li>
           <li class="hct-lane-dammtor"><span class="hct-swim__lane">Radiologie Dammtor</span><span>Befund mit Diagnosestellung (Ausschluss oder Bestätigung einer obstruktiven KHK, Diameterstenose ≥&nbsp;50&nbsp;%) und begründeter Therapie- oder Abklärungsempfehlung.</span></li>

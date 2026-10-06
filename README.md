@@ -48,6 +48,8 @@ npm test                        # Unit-Tests der VTW-Logik (node --test)
 node tools/build.mjs            # src/ + assets/ → public/
 node tools/build.mjs --agentur  # Produktionsfassung nach dist/agentur/herz-ct/ (ohne Prototyp-Rahmen, Links unter /herz-ct, Assets unter /themes/ohjunge/assets/hct/)
 node tools/contrast.mjs         # WCAG-Kontraste der Tokens
+node tools/make-docs.mjs        # Laufzettel und Aufklärung als PDF (+ Vorschaubilder), braucht Playwright/Chromium
+node tools/make-docx.cjs        # dieselben Dokumente als bearbeitbare Word-Dateien nach docs/vorlagen/
 ```
 
 `public/` ist das Build-Ergebnis und wird eingecheckt.
@@ -63,6 +65,10 @@ assets/js/prep-ui.js       Vorbereitungs-Check (Patienten)
 assets/js/print-checklist.js  Druck nur der Checkliste
 assets/img/                Herz-Symbol (SVG/PNG), Praxis-Logo
 src/partials/, src/pages/  Bausteine und Seiten (Include-Syntax wie im ldct-Projekt)
+src/docs/                  Druckvorlagen Laufzettel und Aufklärung (HTML/CSS, A4)
+assets/downloads/          Laufzettel und Aufklärung als PDF (Download auf der Website)
+docs/vorlagen/             Word-Fassungen zum Bearbeiten in der Praxis
+tools/fonts/               Barlow (SIL OFL 1.1) – DIN-ähnliche Schrift nur für die PDF-Erzeugung
 docs/                      Freigabeliste, Recherche/Quellen
 ```
 

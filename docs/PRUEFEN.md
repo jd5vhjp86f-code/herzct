@@ -5,10 +5,10 @@ Alle offenen Stellen sind im Prototyp orange gestrichelt mit „PRÜFEN“ marki
 | # | Inhalt | Seite | Hinweis |
 |---|---|---|---|
 | 1 | Kalk-Score als IGeL: wird er angeboten, zu welchem Preis? | Patienten | Nicht GKV-Leistung als alleinige Untersuchung |
-| 2 | Laborwerte: Kreatinin/eGFR und TSH – wie alt dürfen sie sein? | Patienten, Zuweiser | |
-| 3 | Nüchternheit: wie viele Stunden? | Patienten | Bestehende CT-Seite: „Meist ist nur ein kurzes Nüchternbleiben erforderlich“ |
-| 4 | Koffeinverzicht: ab wann? | Patienten | |
-| 5 | Gesamtdauer des Termins; Fahrtüchtigkeit nach Betablocker/Nitro | Patienten | |
+| 2 | ~~Laborwerte: Alter~~ | – | ✅ max. 12 Wochen (Laufzettel, 06.10.2026) |
+| 3 | ~~Nüchternheit~~ | – | ✅ nicht streng nüchtern, kein schweres Essen unmittelbar vorher, stilles Wasser (Laufzettel) |
+| 4 | Koffein/Nikotin: **„am Tag der Untersuchung“** (Hinweis 06.10.2026) oder **„12 Std. vorher“** (alter Laufzettel)? | Patienten, Laufzettel | Vorerst beides kombiniert: „am Tag der Untersuchung, mindestens 12 Stunden vorher“ – bitte bestätigen |
+| 5 | Fahrtüchtigkeit nach Betablocker/Nitro | Patienten | Dauer ✅ ca. 1,5–2 Stunden |
 | 6 | Befundlaufzeit, Übermittlungsweg (KIM/Fax/Post), Patientenkopie/Bildportal | Patienten, Zuweiser | |
 | 7 | Kooperationspartner Kardiologie für Fallkonferenz (GOP 34371) | Patienten, Zuweiser | Radiologie + Kardiologie Pflicht |
 | 8 | Genehmigung der KV Hamburg nach Strahlendiagnostik-Vereinbarung: Datum, befundende Ärztinnen/Ärzte | Zuweiser | Voraussetzung für GOP 34370 |
@@ -17,6 +17,21 @@ Alle offenen Stellen sind im Prototyp orange gestrichelt mit „PRÜFEN“ marki
 | 11 | Doctolib: Besuchsgrund Herz-CT im Profil vorhanden? | alle | Link bestätigt (05.10.2026): `mammadiagnostik-stephansplatz?pid=practice-79031`, wie beim Lungenkrebsscreening |
 | 12 | Alle medizinischen Texte: fachliche Endabnahme | alle | |
 | 13 | Vorbereitungs-Check: Formulierungen zu Metformin, PDE-5-Hemmern, Betablocker-Kontraindikationen | Patienten | Allgemein gehalten, verweist immer auf das Gespräch |
+
+## Laufzettel und Aufklärung (06.10.2026)
+
+Neu gestaltet nach den Vorlagen der Praxis: `src/docs/*.html` → PDF (`node tools/make-docs.mjs`) in `assets/downloads/`, Word-Fassungen (`node tools/make-docx.cjs`) in `docs/vorlagen/`.
+
+| # | Punkt | Hinweis |
+|---|---|---|
+| 14 | **Kontaktdaten auf dem alten Laufzettel:** Telefon „040 3500485-0“ und E-Mail „info@mrt-dammtor.de“ | Neu verwendet: 040 3500484-0 und info@radiologie-dammtor.de (wie Briefbogen und Website). Bitte bestätigen. |
+| 15 | Laufzettel: „Vom **kardiologischen** Zuweiser auszufüllen“ | Geändert in „Von der überweisenden Praxis“, da auch Hausarztpraxen überweisen dürfen |
+| 16 | Laufzettel: neu ergänzte Felder | Name/Geburtsdatum/Termin, **VTW mit Art der Ermittlung** (EBM-Pflicht), Praxisstempel; bei „Bitte mitbringen“ Überweisung/Versichertenkarte und Aufklärungsbogen |
+| 17 | Laufzettel: Metoprolol „am CT-Morgen“ vs. „ca. 2 Stunden vor dem Termin“ | Vereinheitlicht auf „ca. 2 Stunden vor dem Termin“ |
+| 18 | Aufklärungsbogen: Text unverändert übernommen. **Empfehlung zur Ergänzung** (fachliche/rechtliche Entscheidung): Hinweise zu Betablocker und Nitrospray (Wirkungen, Nebenwirkungen, Fahrtüchtigkeit), zur Strahlenexposition und ein Feld für die Unterschrift der aufklärenden Ärztin / des aufklärenden Arztes (§ 630e BGB: mündliche ärztliche Aufklärung) | Der Bogen beschreibt bisher eine allgemeine CT, nicht die Herz-spezifische Vorbereitung |
+| 19 | Aufklärungsbogen: Frage nach Infektionskrankheiten (HIV, Hepatitis) | Ist die Angabe für die Untersuchung erforderlich (Datensparsamkeit)? |
+
+Korrigierte Schreibfehler des alten Laufzettels: „WOCHEM“, sichtbare Markdown-Sternchen „**…**“.
 
 ## Nebenbefunde
 
